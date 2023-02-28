@@ -43,6 +43,7 @@
 #include <getopt.h>
 #include <pwd.h>
 #include <grp.h>
+#include <netinet/in.h>
 
 #include "log.h"
 #include "usb.h"
@@ -74,7 +75,8 @@ static int report_to_parent = 0;
 
 static int create_socket(void)
 {
-	struct sockaddr_un bind_addr;
+
+	struct sockaddr_in bind_addr;
 	int listenfd;
 
 	if (unlink(socket_path) == -1 && errno != ENOENT)
