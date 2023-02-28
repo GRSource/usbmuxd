@@ -106,7 +106,7 @@ static int create_socket(void)
 	}
 
 	bzero(&bind_addr, sizeof(bind_addr));
-	bind_addr.sun_family = AF_INET;
+	bind_addr.sin_family = AF_INET;
 	bind_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 	bind_addr.sin_port = htons(USBMUXD_SOCKET_PORT);
 
